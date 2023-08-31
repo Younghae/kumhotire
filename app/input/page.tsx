@@ -276,13 +276,13 @@ export default function Input() {
                   <Item>""</Item>
                 </Grid>
                 <Grid>
-                  <Item>Key Factor</Item>
+                  <Item sx={{ height: "75px" }}>Key Factor</Item>
                 </Grid>
                 <Grid>
-                  <Item>고정 Factor</Item>
+                  <Item sx={{ height: "75px" }}>고정 Factor</Item>
                 </Grid>
                 <Grid>
-                  <Item>보조 Factor</Item>
+                  <Item sx={{ height: "75px" }}>보조 Factor</Item>
                 </Grid>
               </Grid>
               <Grid item xs={10}>
