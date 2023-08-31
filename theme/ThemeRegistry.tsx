@@ -15,7 +15,7 @@ const themeOptions: ThemeOptions = {
       light: "#4A4A49",
       main: "#4A4A49",
       dark: "#4A4A49",
-      contrastText: "#ff0000",
+      contrastText: "#ffffff",
     },
     secondary: {
       light: "#EF0010",
