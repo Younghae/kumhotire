@@ -191,10 +191,255 @@ export default function Input() {
             <Item>산출근거</Item>
           </Grid>
           <Grid>
-            <Item>개선 전</Item>
+            <Grid>
+              <Item>개선 전</Item>
+            </Grid>
+            <Grid container direction="row">
+              <Grid item xs={2}>
+                <Item sx={{ height: "100%" }}>Key Factor</Item>
+              </Grid>
+              <Grid item xs={10}>
+                <Grid container direction="row">
+                  <Grid item xs={2}>
+                    <Item>항목</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>단위</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Baseline 효과</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>월 기준</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Action 효과</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Financial 효과</Item>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid>
-            <Item>개선 후</Item>
+            <Grid>
+              <Item>개선 후</Item>
+            </Grid>
+            <Grid container direction="row">
+              <Grid item xs={2} container direction="column">
+                <Grid>
+                  <Item>""</Item>
+                </Grid>
+                <Grid>
+                  <Item>Key Factor</Item>
+                </Grid>
+                <Grid>
+                  <Item>고정 Factor</Item>
+                </Grid>
+                <Grid>
+                  <Item>보조 Factor</Item>
+                </Grid>
+              </Grid>
+              <Grid item xs={10}>
+                <Grid container direction="row">
+                  <Grid item xs={2}>
+                    <Item>항목</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>단위</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Baseline 효과</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>월 기준</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Action 효과</Item>
+                  </Grid>
+                  <Grid item xs={2}>
+                    <Item>Financial 효과</Item>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+                <Grid>
+                  <Grid container direction="row">
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                    <Grid item xs={2}>
+                      <Item>""</Item>
+                    </Grid>
+                  </Grid>
+                </Grid>
+              </Grid>
+            </Grid>
           </Grid>
           <Grid>
             <Item>종합</Item>
