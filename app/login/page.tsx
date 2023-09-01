@@ -12,93 +12,117 @@ import SearchIcon from '@mui/icons-material/Search';
 import Image from 'next/image'
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
+import Autocomplete from '@mui/material/Autocomplete';
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
   ...theme.typography.body2,
   padding: theme.spacing(1),
-  textAlign: 'center',
+  textAlign: 'left',
   color: theme.palette.text.secondary,
 }));
 
+const Lag = [
+  {label: '한국어', language:'korean'},
+  {label: 'English', language:'english'}
+]
+
+
 const Login = () => {
   return (
-  <Box sx={{p:2, border:'1px solid grey', width:'75%', height:'50%'}}>
-    <Item>
-      <Grid container>
-        <Box>
-        <Grid item>
-          <Item>
-        <Image
-      src="/logo.png"
-      width={"100"}
-      height={"40"}
-      alt=""
-    /> 
-    </Item>
-      </Grid>
-      </Box>
-      </Grid>
-    </Item >
-    <Box display='flex' justifyItems='center' alignItems='center' sx={{p:2, border:'1px solid grey'}} >
-      <Box sx={{ flexGrow: 1 }}>
-        <Grid container rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-        <Grid item xs={6}>
-      <Grid container spacing={1}
-        direction="column"
-        justifyContent="space-around"
-        alignItems="stretch"> 
-        <Grid item xs>
-          <Item>  <Typography  sx={{fontWeight: 'bold'}} component="div">
-   <span style={{color:"#ff0000"}}>T</span>CI &nbsp;
-   <span style={{color:"#ff0000"}}>T</span>otal &nbsp;
-   <span style={{color:"#ff0000"}}>M</span>onitoring &nbsp;
-   <span style={{color:"#ff0000"}}>S</span>ystem 
-   </Typography></Item>
-        </Grid>
-        <Grid container spacing={1}
-        direction="column"
-        justifyContent="space-around"
-        alignItems="stretch"> 
-          <Item>
-            <Item>
-    <TextField label="id" />
-    </Item>
-    <Item>
-    <TextField label="password" type='password'/>
+  <><Box sx={{ flexGrow: 1 }}>
       <Item>
-      <Button type='submit' variant='contained' color='primary'>
-        로그인
-    </Button>
+        <Grid container
+          justifyContent="space-between"
+          rowSpacing={1} columnSpacing={{ xs: 1, sm: 2, md: 3 }}
+        >
+          <Grid item xs={10}>
+            <Item>
+              <Image
+                src="/logo.png"
+                width={"200"}
+                height={"55"}
+                alt="" />
+            </Item>
+          </Grid>
+          <Grid item xs={2}>
+            <Item>
+              <Autocomplete
+                disablePortal
+                id="combo-box"
+                options={Lag}
+                sx={{ width: '100%' }}
+                renderInput={(params) => <TextField {...params} label="language" />} />
+            </Item>
+          </Grid>
+        </Grid>
       </Item>
-            </Item>
-            </Item>
-        </Grid>
-        <Grid item xs>
-          <Item> <FormControlLabel control={<CheckBox value="rememberid"/>}
-    label="아이디 저장"/></Item>
-        </Grid>
-          <Grid item xs>
-          <Item>  <Grid item>
+
+    </Box>
+
+    <Box sx={{ flecxGrow: 1 }}>
+    <Grid   container
+  direction="row"
+  justifyContent="flex-start"
+    alignItems="center"
+ >
+    <Grid item xs={7}>
+      <Grid container>
+            <Item>
+          <Typography sx={{ fontWeight: 'bold' }} fontSize={20} component="div">
+            <span style={{ color: "#ff0000" }}>T</span>CI &nbsp;
+            <span style={{ color: "#ff0000" }}>T</span>otal &nbsp;
+            <span style={{ color: "#ff0000" }}>M</span>onitoring &nbsp;
+            <span style={{ color: "#ff0000" }}>S</span>ystem
+          </Typography>
+          <Item>
+          <Grid container >
+            <Grid item>
+            <Grid item>
+              <Item>
+          <TextField label="id" />
+          </Item>
+          <Item>
+          <TextField label="password" type='password' />
+          </Item>
+          <Item>
+          <FormControlLabel control={<CheckBox value="rememberid" />}
+            label="아이디 저장" />
+          </Item>
+          <Item>
           <Button href="/" color='secondary' variant="outlined">  <SearchIcon />비밀번호 찾기</Button>
-         <Button href="/" color='secondary' variant="outlined" > <LockIcon /> 비밀번호 변경</Button>
-        </Grid></Item>
+          <Button href="/" color='secondary' variant="outlined"> <LockIcon /> 비밀번호 변경</Button>
+          </Item>
+          </Grid>
+      </Grid>
+      <Grid item >
+          <Item>
+          <Button type='submit' variant='contained' color='primary' style={{width:100, height:120}} >
+            로그인
+          </Button>
+          </Item>
+          </Grid>
+          
+       
+          </Grid>
+          </Item>
+          </Item>
+          
+          </Grid>
+          </Grid>
+        
+          
+          <Grid item xs={5}>
+          <Image
+            src="/kumhoimg.jpg"
+            width={"200"}
+            height={"300"}
+            alt=""
+            style={{ width: '100%', height: '100%' }} />
         </Grid>
-      </Grid>
-      </Grid>
-      <Grid item xs={6}>
-      <Image
-      src="/kumhoimg.jpg"
-      width={"200"}
-      height={"300"}
-      alt=""
-      style={{width:'90%',height:'100%'}}
-    />
         </Grid>
-      </Grid>
-    </Box>
-    </Box>
-    </Box>
+      </Box></>
+
   );
 }
 

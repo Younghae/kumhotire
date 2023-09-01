@@ -18,8 +18,8 @@ const Item = styled(Paper)(({ theme }) => ({
 export default function Input() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid>
-        <Grid container justifyContent="flex-start" alignItems="center">
+      <Grid container >
+        <Grid>
           <Item>
             <Image
               src="/logo.png"
