@@ -36,8 +36,8 @@ const sobunryu = [
 export default function Input() {
   return (
     <Box sx={{ flexGrow: 1 }}>
-      <Grid container >
-        <Grid>
+      <Grid>
+        <Grid container justifyContent="flex-start" alignItems="center">
           <Item>
             <Image
               src="/logo.png"
