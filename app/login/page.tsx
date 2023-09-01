@@ -92,7 +92,7 @@ const Login = () => {
       width={"200"}
       height={"300"}
       alt=""
-      style={{width:'80%',height:'80%'}}
+      style={{width:'90%',height:'100%'}}
     />
         </Grid>
       </Grid>
