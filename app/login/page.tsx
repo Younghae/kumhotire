@@ -13,6 +13,8 @@ import Image from 'next/image'
 import { styled } from '@mui/material/styles';
 import Paper from '@mui/material/Paper';
 import Autocomplete from '@mui/material/Autocomplete';
+import Link from 'next/link';
+
 
 const Item = styled(Paper)(({ theme }) => ({
   backgroundColor: theme.palette.mode === 'dark' ? '#1A2027' : '#fff',
@@ -38,11 +40,15 @@ const Login = () => {
         >
           <Grid item xs={10}>
             <Item>
+              <Link href="/">
+                
               <Image
                 src="/logo.png"
                 width={"200"}
                 height={"55"}
-                alt="" />
+                alt=""
+                 />
+                 </Link>
             </Item>
           </Grid>
           <Grid item xs={2}>
@@ -60,13 +66,15 @@ const Login = () => {
 
     </Box>
 
-    <Box sx={{ flecxGrow: 1 }}>
+    <Box sx={{border:1, borderColor: 'grey.400',borderRadius: '5px'}} m={20} pt={10} style={{width:'80%', height:'80%'}}>
     <Grid   container
-  direction="row"
-  justifyContent="flex-start"
+   direction="row"
+   justifyContent="flex-end"
     alignItems="center"
+    
  >
-    <Grid item xs={7}>
+    <Grid item xs={5}>
+  <Item>
       <Grid container>
             <Item>
           <Typography sx={{ fontWeight: 'bold' }} fontSize={20} component="div">
@@ -97,30 +105,30 @@ const Login = () => {
       </Grid>
       <Grid item >
           <Item>
-          <Button type='submit' variant='contained' color='primary' style={{width:100, height:120}} >
+          <Button type='submit' variant='contained' color='primary' sx={{p: 2}} style={{width:'100%', height:'100%' }} >
             로그인
           </Button>
           </Item>
           </Grid>
-          
-       
           </Grid>
           </Item>
           </Item>
-          
           </Grid>
+          </Item>
           </Grid>
-        
-          
-          <Grid item xs={5}>
+          <Grid item xs={6}>
+            <Item>
           <Image
             src="/kumhoimg.jpg"
-            width={"200"}
-            height={"300"}
+            width={"90"}
+            height={"170"}
             alt=""
-            style={{ width: '100%', height: '100%' }} />
+            style={{ width: '90%', height: '90%' }} />
+            </Item>
         </Grid>
+        
         </Grid>
+        
       </Box></>
 
   );
