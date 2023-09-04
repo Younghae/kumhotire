@@ -12,11 +12,12 @@ import Container from "@mui/material/Container";
 const Item = styled(Box)(({ theme }) => ({
   border: "1px solid",
   borderRadius: "4px",
-  ...theme.typography.h5,
+  ...theme.typography.h6,
   padding: theme.spacing(1),
   textAlign: "center",
   color: theme.palette.text.secondary,
   height: "100%",
+  fontWeight: "bold",
 }));
 
 const daebunryu = [
@@ -193,6 +194,7 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-basic"
+                      type="number"
                       label="사번을 작성해주세요."
                       variant="filled"
                       fullWidth
@@ -305,6 +307,7 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-basic"
+                      type="number"
                       label="예상 효과금액을 작성해주세요."
                       variant="filled"
                       fullWidth
@@ -337,6 +340,7 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-basic"
+                      type="number"
                       label="투자비를 작성해주세요."
                       variant="filled"
                       fullWidth
@@ -351,6 +355,7 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-basic"
+                      type="number"
                       label="순수 효과 금액을 작성해주세요."
                       variant="filled"
                       fullWidth
@@ -411,6 +416,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -422,6 +428,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -433,6 +440,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -444,6 +452,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -455,6 +464,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -481,6 +491,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -492,6 +503,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -503,6 +515,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -514,6 +527,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -525,6 +539,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -596,6 +611,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -607,6 +623,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -618,6 +635,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -629,6 +647,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -640,6 +659,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -666,6 +686,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -677,6 +698,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -688,6 +710,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -699,6 +722,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -710,6 +734,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -736,6 +761,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -747,6 +773,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -758,6 +785,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -769,6 +797,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -780,6 +809,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -806,6 +836,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -817,6 +848,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -828,6 +860,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -839,6 +872,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -850,6 +884,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -876,6 +911,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -887,6 +923,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -898,6 +935,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -909,6 +947,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -920,6 +959,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -946,6 +986,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="단위를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -957,6 +998,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Baseline효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -968,6 +1010,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="월 기준을 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -979,6 +1022,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="Action 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -990,6 +1034,7 @@ export default function Input() {
                         <Item>
                           <TextField
                             id="filled-basic"
+                            type="number"
                             label="financial 효과를 입력해주세요."
                             variant="filled"
                             fullWidth
@@ -1011,7 +1056,8 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-read-only-input"
-                      defaultValue="단위 총합"
+                      type="number"
+                      defaultValue="0000"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -1023,7 +1069,8 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-read-only-input"
-                      defaultValue="Baseline 총합"
+                      type="number"
+                      defaultValue="0001"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -1035,7 +1082,8 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-read-only-input"
-                      defaultValue="월기준 총합"
+                      type="number"
+                      defaultValue="0002"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -1047,7 +1095,8 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-read-only-input"
-                      defaultValue="Action 총합"
+                      type="number"
+                      defaultValue="0003"
                       InputProps={{
                         readOnly: true,
                       }}
@@ -1059,7 +1108,8 @@ export default function Input() {
                   <Item>
                     <TextField
                       id="filled-read-only-input"
-                      defaultValue="Financial 총합"
+                      type="number"
+                      defaultValue="0004"
                       InputProps={{
                         readOnly: true,
                       }}
