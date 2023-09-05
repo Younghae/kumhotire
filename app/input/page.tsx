@@ -20,6 +20,10 @@ const Item = styled(Box)(({ theme }) => ({
   fontWeight: "bold",
 }));
 
+const Item2 = styled(Box)(({ theme }) => ({
+  padding: theme.spacing(1),
+}));
+
 const daebunryu = [
   { label: "생산성 향상" },
   { label: "생산성 향상2" },
@@ -41,17 +45,17 @@ const sobunryu = [
 export default function Input() {
   return (
     <Container maxWidth="xl">
-      <Box sx={{ flexGrow: 1 }}>
+      <Box sx={{ flexGrow: 0 }}>
         <Grid>
           <Grid container justifyContent="flex-start" alignItems="center">
-            <Item>
+            <Item2>
               <Image
                 src="/logo.png"
                 width={150}
                 height={50}
                 alt="kumhotire logo"
               />
-            </Item>
+            </Item2>
           </Grid>
           <Grid>
             <Grid>
