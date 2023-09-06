@@ -2,7 +2,6 @@
 import * as React from "react";
 import { styled } from "@mui/material/styles";
 import Box from "@mui/material/Box";
-import Paper from "@mui/material/Paper";
 import Grid from "@mui/material/Grid";
 import Image from "next/image";
 import TextField from "@mui/material/TextField";
@@ -11,9 +10,12 @@ import Container from "@mui/material/Container";
 import Button from "@mui/material/Button";
 import Checkbox from "@mui/material/Checkbox";
 import Typography from "@mui/material/Typography";
+import AddIconFill from "@mui/icons-material/AddBoxRounded";
+import AddIcon from "@mui/icons-material/Add";
+import Divider from "@mui/material/Divider";
 
 const Item = styled(Box)(({ theme }) => ({
-  border: "1px solid",
+  border: "1px solid #4A4A49",
   borderRadius: "4px",
   ...theme.typography.h6,
   padding: theme.spacing(1),
@@ -75,13 +77,13 @@ const Login_Gyurye = () => {
             justifyContent="center"
             alignItems="center">
             <Grid>
-              <Item>
+              <Grid>
                 <Box
                   sx={{
                     color: "#EF0010",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   T
                 </Box>
@@ -90,7 +92,7 @@ const Login_Gyurye = () => {
                     color: "#4A4A49",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   CI &nbsp;
                 </Box>
@@ -99,7 +101,7 @@ const Login_Gyurye = () => {
                     color: "#EF0010",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   T
                 </Box>
@@ -108,7 +110,7 @@ const Login_Gyurye = () => {
                     color: "#4A4A49",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   otal &nbsp;
                 </Box>
@@ -117,7 +119,7 @@ const Login_Gyurye = () => {
                     color: "#EF0010",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   M
                 </Box>
@@ -126,7 +128,7 @@ const Login_Gyurye = () => {
                     color: "#4A4A49",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   onitoring &nbsp;
                 </Box>
@@ -135,7 +137,7 @@ const Login_Gyurye = () => {
                     color: "#EF0010",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   S
                 </Box>
@@ -144,49 +146,93 @@ const Login_Gyurye = () => {
                     color: "#4A4A49",
                     display: "inline",
                     fontWeight: "bold",
-                    fontSize: 25,
+                    fontSize: 27,
                   }}>
                   ystem &nbsp;
                 </Box>
-              </Item>
-            </Grid>
-            <Grid container justifyContent="center" alignItems="center">
-              <Grid>
+              </Grid>
+              <Grid container justifyContent="center" alignItems="center">
                 <Grid>
-                  <TextField label={"ID"} id="ID" margin="dense" />
+                  <Grid>
+                    <TextField label={"ID"} id="ID" margin="dense" />
+                  </Grid>
+                  <Grid>
+                    <TextField
+                      label={"PASSWORD"}
+                      id="PASSWORD"
+                      margin="dense"
+                    />
+                  </Grid>
                 </Grid>
-                <Grid>
-                  <TextField label={"PASSWORD"} id="PASSWORD" margin="dense" />
+                <Grid sx={{ marginLeft: 1 }}>
+                  <Button
+                    variant="contained"
+                    color="error"
+                    sx={{
+                      width: "150px",
+                      height: "125px",
+                      fontSize: "1.8rem",
+                    }}>
+                    LOGIN
+                  </Button>
                 </Grid>
               </Grid>
-              <Grid sx={{ marginLeft: 1 }}>
-                <Button
-                  variant="contained"
-                  color="error"
-                  sx={{ width: "150px", height: "125px", fontSize: "1.8rem" }}>
-                  LOGIN
-                </Button>
+              <Grid container>
+                <Grid>
+                  <Checkbox defaultChecked color="error" />
+                  <Typography
+                    sx={{
+                      color: "#4A4A49",
+                      display: "inline",
+                      fontSize: 15,
+                    }}>
+                    아이디저장
+                  </Typography>
+                </Grid>
+                <Grid>
+                  <Checkbox
+                    defaultChecked
+                    icon={<AddIcon />}
+                    checkedIcon={<AddIconFill />}
+                  />
+                  <Typography
+                    sx={{
+                      color: "#4A4A49",
+                      display: "inline",
+                      fontSize: 15,
+                    }}>
+                    신뢰 Site 추가
+                  </Typography>
+                </Grid>
               </Grid>
-            </Grid>
-            <Grid container>
-              <Grid>
-                <Checkbox defaultChecked color="error" />
-                <Typography
+              <Grid sx={{ paddingLeft: 1.5 }}>
+                <Box
                   sx={{
                     color: "#4A4A49",
                     display: "inline",
                     fontSize: 15,
                   }}>
-                  아이디저장
-                </Typography>
-              </Grid>
-              <Grid>
-                <Item>신뢰 Site 추가</Item>
+                  ※ 초기 비밀번호는 &nbsp;
+                </Box>
+                <Box
+                  sx={{
+                    color: "#1824FF",
+                    display: "inline",
+                    fontSize: 15,
+                  }}>
+                  kumhotire1! &nbsp;
+                </Box>
+                <Box
+                  sx={{
+                    color: "#4A4A49",
+                    display: "inline",
+                    fontSize: 15,
+                  }}>
+                  입니다.
+                </Box>
               </Grid>
             </Grid>
-            <Grid>
-              <Item>문구2</Item>
-            </Grid>
+            <Divider />
             <Grid>
               <Item>버튼2개</Item>
             </Grid>
@@ -197,7 +243,7 @@ const Login_Gyurye = () => {
                 src="/kumhoimg.jpg"
                 width={"0"}
                 height={"0"}
-                sizes="(max-width: 768px) 100%, (max-width: 1200px) 100%"
+                sizes="100%"
                 style={{
                   width: "100%",
                   height: "100%",
