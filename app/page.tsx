@@ -11,6 +11,9 @@ export default function Home() {
         <Button variant="contained" href="/input">
           input
         </Button>
+        <Button variant="contained" href="/login_gyurye">
+          login_gyurye
+        </Button>
       </div>
     </main>
   );
