@@ -180,15 +180,15 @@ const Login = () => {
             </Grid>
           </Grid>
           <Grid item xs={6}>
-            {/* <Item> */}
-            <Image
-              src="/kumhoimg.png"
-              width={400}
-              height={370}
-              alt=""
-              style={{ width: "100%", height: "100%" }}
-            />
-            {/* </Item> */}
+            <Box marginLeft={1} marginTop={1} marginRight={1}>
+              <Image
+                src="/kumhoimg.png"
+                width={400}
+                height={370}
+                alt=""
+                style={{ width: "100%", height: "100%" }}
+              />
+            </Box>
           </Grid>
           {/* </Item> */}
         </Grid>
