@@ -15,13 +15,7 @@ import Paper from "@mui/material/Paper";
 import Autocomplete from "@mui/material/Autocomplete";
 import Link from "next/link";
 
-const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
-  padding: theme.spacing(1),
-  textAlign: "left",
-  color: theme.palette.text.secondary,
-}));
+
 
 const Lag = [
   { label: "한국어", language: "korean" },
@@ -31,11 +25,10 @@ const Lag = [
 const Login = () => {
   return (
     <Box
-      justifyContent="space-between"
-      // sx={{ border: 1, borderColor: "grey.400", borderRadius: "5px" }}
-      ml={20}
-      mt={10}
-      style={{ width: "60%", height: "100%" }}
+    display="grid"
+    justifyContent="center"
+    alignItems="center"
+    mt={25}
     >
       <Box
       // sx={{ border: 1, borderColor: "grey.400", borderRadius: "5px" }}
@@ -49,14 +42,14 @@ const Login = () => {
           rowSpacing={1}
           columnSpacing={{ xs: 1, sm: 2, md: 3 }}
         >
-          <Grid item xs={9.5}>
+          <Grid item xs={10}>
             {/* <Item> */}
             <Link href="/">
               <Image src="/logo.png" width={150} height={50} alt="" />
             </Link>
             {/* </Item> */}
           </Grid>
-          <Grid item xs={2.5}>
+          <Grid item xs={2}>
             {/* <Item> */}
             <Autocomplete
               disablePortal
@@ -68,15 +61,17 @@ const Login = () => {
                 <TextField {...params} label="language" />
               )}
             />
+    
+
             {/* </Item> */}
           </Grid>
         </Grid>
       </Box>
       <Box
         sx={{
-          border: 1,
-          borderColor: "grey.400",
-          borderRadius: "8px",
+          border:1,
+          borderColor: 'grey.300',
+          boxShadow: 2,
           marginTop: 2,
         }}
         // display="grid"
@@ -87,13 +82,15 @@ const Login = () => {
           justifyContent="flex-start"
           alignItems="start"
         >
-          <Grid item xs={6}>
+          <Grid item xs={5}> 
             {/* <Item> */}
-            <Grid container direction={"column"} sx={{ ml: 2, mt: 4 }}>
+            <Grid container direction={"column"} sx={{mt:13, ml:2, p:3}}>
+         
               <Grid item xs={2}>
-                {/* <Item> */}
+                {/* <Item> */}      
+                   
                 <Typography
-                  sx={{ fontWeight: "bold" }}
+                  sx={{ fontWeight: "bold" , letterSpacing: 5 }}
                   fontSize={20}
                   component="div"
                 >
@@ -151,8 +148,12 @@ const Login = () => {
               <Grid item xs={2}>
                 {/* <Item> */}
                 <Box
+                border={'1px dashed'}
                   sx={{
-                    mt: 2,
+                    mt: 4,
+                    mb: 1.5,
+                  
+                    color:'grey.400',
                   }}
                 ></Box>
                 <Button
@@ -179,22 +180,26 @@ const Login = () => {
               {/* </Grid> */}
             </Grid>
           </Grid>
-          <Grid item xs={6}>
+          <Grid item xs={7}>
             <Box marginLeft={1} marginTop={1} marginRight={1}>
               <Image
                 src="/kumhoimg.png"
-                width={400}
-                height={370}
+                width={500}
+                height={670}
                 alt=""
-                style={{ width: "100%", height: "100%" }}
+                style={{ width: "100%",height: "55vh" }}
               />
-            </Box>
+              </Box>
+              
           </Grid>
+
           {/* </Item> */}
+   
         </Grid>
 
         {/* </Grid> */}
-      </Box>
+              </Box>
+    
     </Box>
   );
 };
