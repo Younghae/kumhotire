@@ -76,7 +76,7 @@ const Login = () => {
         sx={{
           border: 1,
           borderColor: "grey.400",
-          borderRadius: "4px",
+          borderRadius: "8px",
           marginTop: 2,
         }}
         // display="grid"
@@ -107,7 +107,7 @@ const Login = () => {
               {/* <Grid container direction={"column"}> */}
               <Grid item xs={6}>
                 <Grid container direction={"row"} justifyContent="flex-start">
-                  <Grid item xs={9}>
+                  <Grid item xs={8}>
                     {/* <Item> */}
                     <TextField label="id" fullWidth={true} />
                     {/* </Item> */}
@@ -157,15 +157,20 @@ const Login = () => {
                 ></Box>
                 <Button
                   href="/"
-                  color="secondary"
-                  variant="outlined"
-                  sx={{ marginRight: 1 }}
+                  color="primary"
+                  variant="contained"
+                  sx={{ marginRight: 1, borderRadius: 8 }}
                 >
                   {" "}
                   <SearchIcon />
                   비밀번호 찾기
                 </Button>
-                <Button href="/" color="secondary" variant="outlined">
+                <Button
+                  href="/"
+                  color="primary"
+                  variant="contained"
+                  sx={{ borderRadius: 8 }}
+                >
                   {" "}
                   <LockIcon /> 비밀번호 변경
                 </Button>
@@ -177,11 +182,11 @@ const Login = () => {
           <Grid item xs={6}>
             {/* <Item> */}
             <Image
-              src="/kumhoimg.jpg"
+              src="/kumhoimg.png"
               width={400}
               height={370}
               alt=""
-              // style={{ width: "90%", height: "90%" }}
+              style={{ width: "100%", height: "100%" }}
             />
             {/* </Item> */}
           </Grid>
