@@ -187,7 +187,7 @@ const Login = () => {
                 width={500}
                 height={670}
                 alt=""
-                style={{ width: "100%",height: "50vh" }}
+                style={{ width: "100%",height: "55vh" }}
               />
               </Box>
               
