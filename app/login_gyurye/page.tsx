@@ -61,8 +61,9 @@ const Login_Gyurye = () => {
                 size="small"
                 sx={{ width: 200 }}
                 options={language}
+                value={language[0]}
                 renderInput={(params) => (
-                  <TextField {...params} label="한국어" />
+                  <TextField {...params} label="language" />
                 )}
               />
             </Item>
