@@ -84,7 +84,7 @@ const Login = () => {
         >
           <Grid item xs={5}> 
             {/* <Item> */}
-            <Grid container direction={"column"} sx={{mt:10, ml:2, p:3}}>
+            <Grid container direction={"column"} sx={{mt:13, ml:2, p:3}}>
          
               <Grid item xs={2}>
                 {/* <Item> */}      
@@ -150,7 +150,7 @@ const Login = () => {
                 <Box
                 border={'1px dashed'}
                   sx={{
-                    mt: 3,
+                    mt: 4,
                     mb: 1.5,
                   
                     color:'grey.400',
