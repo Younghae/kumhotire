@@ -1,4 +1,27 @@
 {
+  "User":[
+    {"ID":"admin1",
+    "User_password": "1234", 
+    "User_name":"홍길동",
+    "User_role": "admin",
+    "Team":"",
+    "User_role_detail":"대표이사"
+    },
+    {"ID":"100",
+    "User_password": "1234", 
+    "User_name":"이가나",
+    "User_role": "admin",
+    "Team":"경영지원팀",
+    "User_role_detail":"과장"
+  },
+  {"ID":"200",
+  "User_password": "1234", 
+  "User_name":"이다나",
+  "User_role": "User",
+  "Team":"생산1팀",
+  "User_role_detail":"대리"
+  }
+  ],
   "MyIdea": [
     {
       "Dept": "경영본부",
