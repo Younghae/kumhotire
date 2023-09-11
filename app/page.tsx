@@ -1,8 +1,11 @@
 import * as React from "react";
 import Button from "@mui/material/Button";
 
+
+
 export default function Home() {
   return (
+    <>
     <main>
       <div>
         <Button variant="contained" href="/login">
@@ -16,5 +19,6 @@ export default function Home() {
         </Button>
       </div>
     </main>
+    </>
   );
 }
