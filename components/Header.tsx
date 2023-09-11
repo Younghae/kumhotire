@@ -11,6 +11,7 @@ const Menu = styled(Box)({
 
 const MenuItem = styled(Button)({
     fontWeight:900,
+    color:"black",
     fontSize:"12px",
     marginRight:"2px",
 })
@@ -18,7 +19,7 @@ const MenuItem = styled(Button)({
 const Header = () => {
   return (
    <Box>
-<AppBar position='static' color='secondary' elevation={0}>
+<AppBar position='static' color='primary' elevation={0}>
     <Menu>
         <MenuItem>
         헤더입니다.
