@@ -6,12 +6,17 @@ async function MyIdeaData() {
   const response = await fetch("http://localhost:8000/MyIdea");
   const MyIdeas = await response.json();
   console.log(MyIdeas);
+  return {
+    props: {
+      MyIdeas,
+    },
+  };
 }
 
 const MyIdea = () => {
   return (
     <Container maxWidth="xl" sx={{ border: "1px solid" }}>
-      <MyIdeaData />
+      {response.json}
     </Container>
   );
 };
