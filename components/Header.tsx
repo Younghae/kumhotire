@@ -1,31 +1,56 @@
 "use client";
 import React from 'react'
-import { Container,AppBar, styled, Button, Box } from '@mui/material'
+import { Grid ,AppBar, styled, Button, Box, Typography} from '@mui/material'
+import Link from 'next/link';
 
 const Menu = styled(Box)({
-    borderBottom:'1px solid black',
     display:'flex',
-    justifyContent:'center',
+    justifyContent:"space-around",
     alignItems:'center',
 });
 
 const MenuItem = styled(Button)({
     fontWeight:900,
-    color:"black",
-    fontSize:"12px",
-    marginRight:"2px",
+    color:"white",
+    fontSize:"18px",
+    marginRight:"2px"
 })
 
+const LoginButton = styled(Button)({
+    fontWeight:900,
+    fontSize:"10px",
+    backgroundColor:'#454B52',
+    color:'white',
+    
+})
 const Header = () => {
   return (
+    <Box>
+    <Box mt={1} mb={0.5}>
+    <Grid container spacing={4}> 
+   <Grid item xs={11}>
+<Link style={{ textDecoration: "none", color: "black", fontSize:"12"}} href={'/'}><Typography >TCI 통합 모니터링 시스템</Typography></Link>
+    </Grid>
+    <Grid item xs={1}>
+        <LoginButton href='/login' sx={{ borderRadius: '16px'}} >Login</LoginButton>
+        </Grid>
+    </Grid>
+   </Box>
    <Box>
-<AppBar position='static' color='primary' elevation={0}>
-    <Menu>
-        <MenuItem>
-        헤더입니다.
-        </MenuItem>
+<AppBar position='static' elevation={0} sx={{backgroundColor:'#454B52'}}>
+    <Grid container > 
+   <Grid item xs={12}>
+    <Menu >
+        <MenuItem href='/'>종합현황</MenuItem>
+        <MenuItem href='/'>Idea 추진 현황</MenuItem>
+        <MenuItem href='/'>My Idea</MenuItem>
+        <MenuItem href='/'>시스템 공통</MenuItem>
+        <MenuItem href='/master'>마스터 관리</MenuItem>
     </Menu>
+    </Grid>
+    </Grid>
 </AppBar>
+   </Box>
    </Box>
   )
 }
