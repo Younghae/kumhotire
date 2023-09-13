@@ -7,6 +7,7 @@ import { StringLiteral } from "typescript";
 import { AbsoluteString } from "next/dist/lib/metadata/types/metadata-types";
 
 import MyIdea from "../../Interface/MyIdea";
+import Box from "@mui/material/Box";
 
 export default function MyIdea() {
   // const getMyIdea = await fetch("http://localhost:8000/MyIdea");
@@ -30,9 +31,9 @@ export default function MyIdea() {
     <Container maxWidth="xl" sx={{ border: "1px solid" }}>
       <div>이규례</div>
       {myIdea.map((idea, index) => (
-        <li key={index}>
-          <div>{idea.Name}</div>
-        </li>
+        // <li key={index}>
+        <Box key={index}>{idea.Name}</Box>
+        // </li>
         // console.log(idea.Name);
       ))}
     </Container>
