@@ -16,7 +16,7 @@ export default function MyIdea() {
   const [myIdea, setMyIdea] = useState<MyIdea[]>([]);
   useEffect(() => {
     async function fetchData() {
-      console.log(process.env.SERVER_BASE_URL as string);
+      console.log(process.env.SERVER_BASE_URL);
       const response = await fetch(`${process.env.SERVER_BASE_URL}/MyIdea`);
       // const response = await fetch("http://localhost:8000/MyIdea");
       const json = await response.json();
