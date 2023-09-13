@@ -1,22 +1,33 @@
 "use client";
-import {useEffect, useState} from 'react'
 
-const Group_admin = () => {
-  const [name, setName] =  useState("");
-  useEffect(() => {
-    async function fecthData() {
-    let response = await fetch("http://localhost:8000/User");
+import { Post }  from "@/lib/types"
+import { useState, useEffect } from "react";
+
+
+export default function Group_admin() {
+const [data,setData] = useState<Post[]>([]);
+
+useEffect(() => {
+  async function fetchData() {
+    const response = await fetch("http://localhost:8000/User")
     const data = await response.json();
-    setName(data.name);
-    }
-    fecthData();
-  },[])
-  return (
-    <div>
-   <h1>
-    {name as string} 입니다.</h1>
-    </div>
-  )
-}
+    setData(data);
+  }
+fetchData()
+},[])
 
-export default Group_admin;
+
+  return (
+    <div >
+      <h1>이름</h1>
+      <ul>
+        {data.map((post) => (
+          <div>
+          <li key={post.id}>{post.Name}</li>
+          </div>
+        ))}
+      </ul>
+    </div>
+  );
+
+        }

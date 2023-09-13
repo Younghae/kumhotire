@@ -14,7 +14,8 @@ import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
 import Autocomplete from "@mui/material/Autocomplete";
 import Link from "next/link";
-
+import {useState} from 'react';
+import {useRouter} from "next/navigation";
 
 
 const Lag = [
@@ -23,12 +24,53 @@ const Lag = [
 ];
 
 const Login = () => {
+  const [userid, useridupdate] = useState('');
+  const [password, passwordupdate] = useState('');
+  const router = useRouter();
+  const ProceedLogin = (e:any) => {
+    e.preventDefault();
+  if(vaildate()) {
+    fetch("http://localhost:8000/User/"+ userid).then((res) => {
+      return res.json();
+    }).then((resp)=> {
+      if(Object.keys(resp).length === 0) {
+        alert('등록되지 않는 유저입니다.');
+      } else {
+        if(resp.password === password) {
+          alert('로그인성공')
+       router.push("/input");
+        }else{
+          alert('비밀번호 오류')
+        }
+      }
+        console.log(resp)
+    }).catch((error) => {
+      alert('로그인 실패입니다.');
+    });
+
+  }
+  }
+
+const vaildate= () => {
+  let result = true;
+  if (userid === '' || userid === null) {
+    result=false;
+    alert('아이디를 입력하세요')
+  }
+  if (password === '' || password === null) {
+    result=false;
+    alert('비밀번호를 입력하세요')
+  }
+return result;
+}
+
+
   return (
     <Box
     display="grid"
     justifyContent="center"
     alignItems="center"
-    mt={25}
+    mt={10}
     >
       <Box
       // sx={{ border: 1, borderColor: "grey.400", borderRadius: "5px" }}
@@ -102,11 +144,16 @@ const Login = () => {
                 {/* </Item> */}
               </Grid>
               {/* <Grid container direction={"column"}> */}
+              <React.Fragment>
+           < Box component="form" autoComplete="off" onSubmit={ProceedLogin}>
               <Grid item xs={6}>
                 <Grid container direction={"row"} justifyContent="flex-start">
                   <Grid item xs={8}>
-                    {/* <Item> */}
-                    <TextField label="id" fullWidth={true} />
+                    {/* <Item> */} 
+                    <TextField label="id" 
+                    value={userid} 
+                    onChange={e=>useridupdate(e.target.value)} 
+                    fullWidth={true}/>
                     {/* </Item> */}
                     {/* <Item> */}
                     <Box
@@ -114,8 +161,11 @@ const Login = () => {
                         mt: 1,
                       }}
                     ></Box>
+                    
                     <TextField
                       label="password"
+                      value={password}
+                      onChange={e=>passwordupdate(e.target.value)} 
                       type="password"
                       fullWidth={true}
                     />
@@ -133,9 +183,12 @@ const Login = () => {
                       LOGIN
                     </Button>
                     {/* </Item> */}
+              
                   </Grid>
                 </Grid>
               </Grid>
+              </Box>
+              </React.Fragment>
               <Grid item xs={2}>
                 {/* <Item> */}
 
