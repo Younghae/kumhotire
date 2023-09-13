@@ -66,46 +66,39 @@ const Login = () => {
   };
 
   return (
-    <Box display="grid" justifyContent="center" alignItems="center" mt={10}>
-      <Box
-      // sx={{ border: 1, borderColor: "grey.400", borderRadius: "5px" }}
-
-      // display="grid"
+    <Box display="grid" justifyContent="center" alignItems="center" mt={8}>
+      <Grid
+        container
+        justifyContent="space-between"
+        alignItems="center"
+        rowSpacing={1}
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
       >
-        <Grid
-          container
-          justifyContent="space-between"
-          alignItems="center"
-          rowSpacing={1}
-          columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
-          <Grid item xs={10}>
-            {/* <Item> */}
-            <Link href="/">
-              <Image src="/logo.png" width={150} height={50} alt="" />
-            </Link>
-            {/* </Item> */}
-          </Grid>
-          <Grid item xs={2}>
-            {/* <Item> */}
-            <Autocomplete
-              disablePortal
-              id="combo-box"
-              options={Lag}
-              value={Lag[0]}
-              sx={{ width: "100%" }}
-              renderInput={(params) => (
-                <TextField {...params} label="language" />
-              )}
-            />
-
-            {/* </Item> */}
-          </Grid>
+        <Grid item xs={10}>
+          {/* <Item> */}
+          <Link href="/">
+            <Image src="/logo.png" width={150} height={50} alt="" />
+          </Link>
+          {/* </Item> */}
         </Grid>
-      </Box>
+        <Grid item xs={2}>
+          {/* <Item> */}
+          <Autocomplete
+            disablePortal
+            id="combo-box"
+            options={Lag}
+            value={Lag[0]}
+            sx={{ width: "100%" }}
+            renderInput={(params) => <TextField {...params} label="language" />}
+          />
+
+          {/* </Item> */}
+        </Grid>
+      </Grid>
       <Box
         sx={{
-          border: 1,
-          borderColor: "grey.300",
+          // border: 1,
+          // borderColor: "grey.300",
           boxShadow: 2,
           marginTop: 2,
         }}
@@ -115,75 +108,92 @@ const Login = () => {
           container
           direction="row"
           justifyContent="flex-start"
-          alignItems="start">
+          alignItems="start"
+        >
           <Grid item xs={5}>
             {/* <Item> */}
-            <Grid container direction={"column"} sx={{ mt: 13, ml: 2, p: 3 }}>
+            <Grid container direction={"column"} sx={{ mt: 4, ml: 2, p: 3 }}>
               <Grid item xs={2}>
                 {/* <Item> */}
 
                 <Typography
-                  sx={{ fontWeight: "bold", letterSpacing: 5 }}
-                  fontSize={20}
-                  component="div">
-                  <span style={{ color: "#ff0000" }}>T</span>CI &nbsp;
-                  <span style={{ color: "#ff0000" }}>T</span>otal &nbsp;
-                  <span style={{ color: "#ff0000" }}>M</span>onitoring &nbsp;
+                  sx={{ fontWeight: "bold", letterSpacing: 4 }}
+                  fontSize={18}
+                  component="div"
+                >
+                  <span style={{ color: "#ff0000" }}>T</span>CI&nbsp;
+                  <span style={{ color: "#ff0000" }}>T</span>otal&nbsp;
+                  <span style={{ color: "#ff0000" }}>M</span>onitoring&nbsp;
                   <span style={{ color: "#ff0000" }}>S</span>ystem
                 </Typography>
+                <Box
+                  sx={{
+                    mt: 1,
+                  }}
+                ></Box>
                 {/* </Item> */}
               </Grid>
               {/* <Grid container direction={"column"}> */}
-              <React.Fragment>
-                <Box
-                  component="form"
-                  autoComplete="off"
-                  onSubmit={ProceedLogin}>
-                  <Grid item xs={6}>
-                    <Grid
-                      container
-                      direction={"row"}
-                      justifyContent="flex-start">
-                      <Grid item xs={8}>
-                        {/* <Item> */}
-                        <TextField
-                          label="id"
-                          value={userid}
-                          onChange={(e) => useridupdate(e.target.value)}
-                          fullWidth={true}
-                        />
-                        {/* </Item> */}
-                        {/* <Item> */}
-                        <Box
-                          sx={{
-                            mt: 1,
-                          }}></Box>
+              {/* <React.Fragment> */}
 
-                        <TextField
-                          label="password"
-                          value={password}
-                          onChange={(e) => passwordupdate(e.target.value)}
-                          type="password"
-                          fullWidth={true}
-                        />
-                        {/* </Item> */}
-                      </Grid>
-                      <Grid item xs={3}>
-                        {/* <Item> */}
-                        <Button
-                          type="submit"
-                          variant="contained"
-                          color="secondary"
-                          fullWidth={true}
-                          sx={{ height: "100%", marginLeft: 1 }}>
-                          LOGIN
-                        </Button>
-                        {/* </Item> */}
-                      </Grid>
-                    </Grid>
+              <Grid item xs={6}>
+                <Grid
+                  container
+                  direction={"row"}
+                  justifyContent="flex-start"
+                  // sx={{
+                  //   border: 1,
+                  //   borderColor: "grey.300",
+                  // }}
+                >
+                  <Grid item xs={8}>
+                    {/* <Item> */}
+                    <Box
+                      component="form"
+                      autoComplete="off"
+                      onSubmit={ProceedLogin}
+                    >
+                      <TextField
+                        label="id"
+                        value={userid}
+                        onChange={(e) => useridupdate(e.target.value)}
+                        // fullWidth={true}
+                      />
+                      {/* </Item> */}
+                      {/* <Item> */}
+                      <Box
+                        sx={{
+                          mt: 1,
+                        }}
+                      ></Box>
+
+                      <TextField
+                        label="password"
+                        value={password}
+                        onChange={(e) => passwordupdate(e.target.value)}
+                        type="password"
+                        // fullWidth={true}
+                      />
+                      {/* </Item> */}
+                    </Box>
                   </Grid>
-                </Box>
-              </React.Fragment>
+                  <Grid item xs={4}>
+                    {/* <Item> */}
+                    <Button
+                      type="submit"
+                      variant="contained"
+                      color="secondary"
+                      // fullWidth={true}
+                      sx={{ height: "100%", marginLeft: 1 }}
+                    >
+                      LOGIN
+                    </Button>
+                    {/* </Item> */}
+                  </Grid>
+                </Grid>
+              </Grid>
+
+              {/* </React.Fragment> */}
               <Grid item xs={2}>
                 {/* <Item> */}
 
@@ -202,12 +212,14 @@ const Login = () => {
                     mb: 1.5,
 
                     color: "grey.400",
-                  }}></Box>
+                  }}
+                ></Box>
                 <Button
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ marginRight: 1, borderRadius: 8 }}>
+                  sx={{ marginRight: 1, borderRadius: 8 }}
+                >
                   {" "}
                   <SearchIcon />
                   비밀번호 찾기
@@ -216,7 +228,8 @@ const Login = () => {
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ borderRadius: 8 }}>
+                  sx={{ borderRadius: 8 }}
+                >
                   {" "}
                   <LockIcon /> 비밀번호 변경
                 </Button>
