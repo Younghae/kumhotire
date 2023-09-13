@@ -92,20 +92,94 @@ export default function VerticalTabs() {
             borderRight: 1,
             borderColor: "divider",
             backgroundColor: "#D9D9D9",
-
             "&:hover": {
-              // backgroundColor: "black",
+              backgroundColor: "#f2f2f2",
               color: "black",
               transition: "0.2s",
             },
             // "&:active": {
             //   color: "red",
             // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
           }}
         />
-        <Tab label="사용자 관리" {...Master(1)} />
-        <Tab label="그룹 관리" {...Master(2)} />
-        <Tab label="메뉴 관리" {...Master(3)} />
+        <Tab
+          label="사용자 관리"
+          {...Master(1)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
+        <Tab
+          label="그룹 관리"
+          {...Master(2)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
+        <Tab
+          label="메뉴 관리"
+          {...Master(3)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
       </Tabs>
       <TabPanel value={value} index={0}>
         <Idea_Master_admin />
