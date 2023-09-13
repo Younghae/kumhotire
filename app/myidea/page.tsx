@@ -17,7 +17,7 @@ export default function MyIdea() {
   const [myIdea, setMyIdea] = useState<MyIdea[]>([]);
   useEffect(() => {
     async function fetchData() {
-      console.log(process.env.SERVER_BASE_URL);
+      // console.log(process.env.SERVER_BASE_URL);
       const response = await fetch(`${process.env.SERVER_BASE_URL}/MyIdea`);
       // const response = await fetch("http://localhost:8000/MyIdea");
       const json = await response.json();
@@ -32,7 +32,7 @@ export default function MyIdea() {
       <div>이규례</div>
       {myIdea.map((idea, index) => (
         // <li key={index}>
-        <Box key={index}>{idea.Name}</Box>
+        <Box key={index}>{idea.name}</Box>
         // </li>
         // console.log(idea.Name);
       ))}
