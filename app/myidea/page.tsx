@@ -6,18 +6,7 @@ import { useEffect, useState } from "react";
 import { StringLiteral } from "typescript";
 import { AbsoluteString } from "next/dist/lib/metadata/types/metadata-types";
 
-export default interface MyIdea {
-  Em_Id: string;
-  Name: string;
-  Idea: string;
-  Effect: string;
-  Dept: string;
-  Office: string;
-  Team: string;
-  Status: string;
-  Stage: string;
-  Date: string;
-}
+import MyIdea from "../../Interface/MyIdea";
 
 export default function MyIdea() {
   // const getMyIdea = await fetch("http://localhost:8000/MyIdea");
