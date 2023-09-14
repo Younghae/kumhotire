@@ -1,15 +1,15 @@
 "use client";
 
-import * as React from 'react';
-import Tabs from '@mui/material/Tabs';
-import Tab from '@mui/material/Tab';
-import Typography from '@mui/material/Typography';
-import Box from '@mui/material/Box';
-import {useState, useEffect} from 'react';
-import Idea_Master_admin from './Idea_master_admin/page';
-import User_admin from './user_admin/page';
-import Group_admin from './group_admin/page';
-import Menu_admin from './menu_admin/page';
+import * as React from "react";
+import Tabs from "@mui/material/Tabs";
+import Tab from "@mui/material/Tab";
+import Typography from "@mui/material/Typography";
+import Box from "@mui/material/Box";
+import { useState, useEffect } from "react";
+import Idea_Master_admin from "./Idea_master_admin/page";
+import User_admin from "./user_admin/page";
+import Group_admin from "./group_admin/page";
+import Menu_admin from "./menu_admin/page";
 
 interface TabPanelProps {
   children?: React.ReactNode;
@@ -37,7 +37,7 @@ function TabPanel(props: TabPanelProps) {
       {...other}
     >
       {value === index && (
-        <Box sx={{ p: 3}}>
+        <Box sx={{ p: 3 }}>
           <Typography>{children}</Typography>
         </Box>
       )}
@@ -48,7 +48,7 @@ function TabPanel(props: TabPanelProps) {
 function Master(index: number) {
   return {
     id: `vertical-tab-${index}`,
-    'aria-controls': `vertical-tabpanel-${index}`,
+    "aria-controls": `vertical-tabpanel-${index}`,
   };
 }
 
@@ -61,7 +61,12 @@ export default function VerticalTabs() {
 
   return (
     <Box
-      sx={{ flexGrow: 10 ,bgcolor: 'background.paper', display: 'flex', height: 600 }}
+      sx={{
+        flexGrow: 10,
+        bgcolor: "background.paper",
+        display: "flex",
+        height: 600,
+      }}
     >
       <Tabs
         orientation="vertical"
@@ -69,25 +74,125 @@ export default function VerticalTabs() {
         value={value}
         onChange={handleChange}
         aria-label="Vertical tabs example"
-        sx={{ borderRight: 1, borderColor: 'divider', backgroundColor:"#D9D9D9" }}
+        sx={{
+          borderRight: 1,
+          borderColor: "divider",
+          backgroundColor: "#D9D9D9",
+          // "&:hover": {
+          //   backgroundColor: "black",
+          //   transition: "0.2s",
+          // },
+        }}
       >
-        <Tab label="Idea 마스터 관리" {...Master(0)} />
-        <Tab label="사용자 관리" {...Master(1)} />
-        <Tab label="그룹 관리" {...Master(2)} />
-        <Tab label="메뉴 관리" {...Master(3)} />
+        <Tab
+          label="Idea 마스터 관리"
+          {...Master(0)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
+        <Tab
+          label="사용자 관리"
+          {...Master(1)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
+        <Tab
+          label="그룹 관리"
+          {...Master(2)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
+        <Tab
+          label="메뉴 관리"
+          {...Master(3)}
+          color="black"
+          sx={{
+            borderRight: 1,
+            borderColor: "divider",
+            backgroundColor: "#D9D9D9",
+            "&:hover": {
+              backgroundColor: "#f2f2f2",
+              color: "black",
+              transition: "0.2s",
+            },
+            // "&:active": {
+            //   color: "red",
+            // },
+
+            "&.Mui-selected": {
+              // backgroundColor: theme.palette.secondary.main,
+              color: "black",
+              // borderRadius: "25px"
+            },
+          }}
+        />
       </Tabs>
       <TabPanel value={value} index={0}>
-     <Idea_Master_admin />
+        <Idea_Master_admin />
       </TabPanel>
       <TabPanel value={value} index={1}>
-    <User_admin />
+        <User_admin />
       </TabPanel>
       <TabPanel value={value} index={2}>
         <Group_admin />
       </TabPanel>
       <TabPanel value={value} index={3}>
-    <Menu_admin />
+        <Menu_admin />
       </TabPanel>
-     </Box>
+    </Box>
   );
 }

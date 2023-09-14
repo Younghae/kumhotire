@@ -1,12 +1,12 @@
 export interface Post {
-    Em_Id: String;
-    id: any;
-    password: String;
-    Code: String;
-    Name: any;
-    Dept: String;
-    Office: String;
-    Team: String;
-    Rank: String;
-    Role: String;
-  }
+  emid: String;
+  id: any;
+  password: String;
+  code: String;
+  name: any;
+  dept: String;
+  office: String;
+  team: String;
+  rank: String;
+  role: String;
+}
