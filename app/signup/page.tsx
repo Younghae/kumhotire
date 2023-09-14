@@ -13,6 +13,8 @@ import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
 import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
+import { styled } from "@mui/material/styles";
+import Paper from "@mui/material/Paper";
 
 const dept = [
   { label: "경영본부" },
@@ -27,6 +29,14 @@ const team = [
   { label: "생산1팀" },
   { label: "연구1팀" },
 ];
+
+const Item = styled(Paper)(({ theme }) => ({
+  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
+  ...theme.typography.body2,
+  padding: theme.spacing(1),
+  textAlign: "center",
+  color: theme.palette.text.secondary,
+}));
 
 export default function SignUp() {
   const [showPassword, setShowPassword] = React.useState(false);
@@ -70,13 +80,14 @@ export default function SignUp() {
             회원가입
           </Typography>
         </Grid>
-        <form onSubmit={handleSubmit}>
-          <Grid
-            container
-            direction="row"
-            justifyContent="center"
-            alignItems="center">
-            <Grid xs={6}>
+        {/* <form onSubmit={handleSubmit}> */}
+        <Grid
+          container
+          direction="row"
+          justifyContent="center"
+          alignItems="center">
+          <Grid item xs={6}>
+            <Item>
               <TextField
                 label="사번을 작성해주세요."
                 variant="filled"
@@ -98,7 +109,7 @@ export default function SignUp() {
                 size="small"
                 onChange={handleFormChange}
               />
-              <Grid sx={{ m: 1 }} />
+              <Grid item sx={{ m: 1 }} />
               <FormControl variant="filled" fullWidth size="small" required>
                 <InputLabel htmlFor="password">
                   비밀번호를 작성해주세요.
@@ -143,7 +154,6 @@ export default function SignUp() {
                     variant="filled"
                     label="본부를 선택하세요"
                     value={FormData.dept}
-                    onChange={handleFormChange}
                   />
                 )}
               />
@@ -202,13 +212,15 @@ export default function SignUp() {
               <Grid sx={{ m: 1 }} />
               <Button
                 type="submit"
+                onClick={handleSubmit}
                 variant="contained"
                 sx={{ width: "100%", fontWeight: "bold" }}>
                 회원가입
               </Button>
-            </Grid>
+            </Item>
           </Grid>
-        </form>
+        </Grid>
+        {/* </form> */}
       </Grid>
     </Container>
   );
