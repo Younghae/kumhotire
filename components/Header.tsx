@@ -2,6 +2,7 @@
 import React from "react";
 import { Grid, AppBar, styled, Button, Box, Typography } from "@mui/material";
 import Link from "next/link";
+import { signIn, signOut, useSession } from "next-auth/react";
 
 const Menu = styled(Box)({
   display: "flex",
@@ -31,6 +32,7 @@ const LoginButton = styled(Button)({
   },
 });
 const Header = () => {
+  const {data:session} = useSession();
   return (
     <Box>
       <Box mt={1} mb={0.5}>
@@ -44,9 +46,19 @@ const Header = () => {
             </Link>
           </Grid>
           <Grid item xs={1}>
-            <LoginButton href="/login" sx={{ borderRadius: "16px" }}>
-              Login
+            {session?.user ? (
+              <>
+              <Typography> {session.user.name}님 반갑습니다.</Typography>
+              <LoginButton onClick={()=> signOut()} sx={{ borderRadius: "16px" }}>
+              로그아웃
             </LoginButton>
+              </>
+            ):(
+            <LoginButton onClick={()=> signIn()} sx={{ borderRadius: "16px" }}>
+              로그인
+            </LoginButton>
+            )}
+            
           </Grid>
         </Grid>
       </Box>

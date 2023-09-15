@@ -1,4 +1,4 @@
-export interface Post {
+export interface User {
   emid: String;
   id: any;
   password: String;

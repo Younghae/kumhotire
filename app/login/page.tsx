@@ -1,5 +1,5 @@
 "use client";
-import React from "react";
+import React, { ChangeEventHandler, FormEventHandler, useRef } from "react";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import Grid from "@mui/material/Grid";
@@ -10,59 +10,31 @@ import Typography from "@mui/material/Typography";
 import LockIcon from "@mui/icons-material/Lock";
 import SearchIcon from "@mui/icons-material/Search";
 import Image from "next/image";
-import { styled } from "@mui/material/styles";
-import Paper from "@mui/material/Paper";
 import Autocomplete from "@mui/material/Autocomplete";
 import Link from "next/link";
+import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
+import {NextPage} from 'next';
+
 
 const Lag = [
   { label: "한국어", language: "korean" },
   { label: "English", language: "english" },
 ];
 
-const Login = () => {
-  const [userid, useridupdate] = useState("");
-  const [password, passwordupdate] = useState("");
-  const router = useRouter();
-  const ProceedLogin = (e: any) => {
+const Login:NextPage = (props): JSX.Element=>  {
+  const [userInfo, setUserInfo] = useState({ id: "", password: "" });
+  const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
-    if (vaildate()) {
-      fetch("http://localhost:8000/User/" + userid)
-        .then((res) => {
-          return res.json();
-        })
-        .then((resp) => {
-          if (Object.keys(resp).length === 0) {
-            alert("등록되지 않는 유저입니다.");
-          } else {
-            if (resp.password === password) {
-              alert("로그인성공");
-              router.push("/input");
-            } else {
-              alert("비밀번호 오류");
-            }
-          }
-          console.log(resp);
-        })
-        .catch((error) => {
-          alert("로그인 실패입니다.");
-        });
-    }
-  };
 
-  const vaildate = () => {
-    let result = true;
-    if (userid === "" || userid === null) {
-      result = false;
-      alert("아이디를 입력하세요");
-    }
-    if (password === "" || password === null) {
-      result = false;
-      alert("비밀번호를 입력하세요");
-    }
-    return result;
+    const res = await signIn("credentials", {
+      id: userInfo.id,
+      password: userInfo.password,
+      redirect: false,
+    });
+
+    console.log(res);
   };
 
   return (
@@ -135,7 +107,11 @@ const Login = () => {
               </Grid>
               {/* <Grid container direction={"column"}> */}
               {/* <React.Fragment> */}
-
+              <Box
+                      component="form"
+                      autoComplete="off"
+                      onSubmit={handleSubmit}
+                    >
               <Grid item xs={6}>
                 <Grid
                   container
@@ -148,15 +124,15 @@ const Login = () => {
                 >
                   <Grid item xs={8}>
                     {/* <Item> */}
-                    <Box
-                      component="form"
-                      autoComplete="off"
-                      onSubmit={ProceedLogin}
-                    >
+                  
                       <TextField
                         label="id"
-                        value={userid}
-                        onChange={(e) => useridupdate(e.target.value)}
+                        value={userInfo.id}
+                        onChange={({ target }) =>
+                        setUserInfo({ ...userInfo, id: target.value })
+                      }
+                      type="id"
+                        
                         // fullWidth={true}
                       />
                       {/* </Item> */}
@@ -169,13 +145,15 @@ const Login = () => {
 
                       <TextField
                         label="password"
-                        value={password}
-                        onChange={(e) => passwordupdate(e.target.value)}
+                        value={userInfo.password}
+                        onChange={({ target }) =>
+                          setUserInfo({ ...userInfo, password: target.value })
+                      }
                         type="password"
                         // fullWidth={true}
                       />
                       {/* </Item> */}
-                    </Box>
+         
                   </Grid>
                   <Grid item xs={4}>
                     {/* <Item> */}
@@ -192,7 +170,7 @@ const Login = () => {
                   </Grid>
                 </Grid>
               </Grid>
-
+              </Box>
               {/* </React.Fragment> */}
               <Grid item xs={2}>
                 {/* <Item> */}

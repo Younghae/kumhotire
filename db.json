@@ -59,6 +59,18 @@
       "team": "연구1팀",
       "rank": "팀원",
       "role": "사원"
+    },
+    {
+      "emid": "500",
+      "id": "test11",
+      "password": "1234",
+      "code": "T004",
+      "name": "실험용",
+      "dept": "연구본부",
+      "office": "연구부",
+      "team": "연구1팀",
+      "rank": "팀원",
+      "role": "사원"
     }
   ],
   "MyIdea": [
