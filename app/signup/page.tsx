@@ -1,4 +1,6 @@
 "use client";
+
+import axios from "axios";
 import * as React from "react";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
@@ -11,7 +13,6 @@ import Visibility from "@mui/icons-material/Visibility";
 import VisibilityOff from "@mui/icons-material/VisibilityOff";
 import FormControl from "@mui/material/FormControl";
 import InputLabel from "@mui/material/InputLabel";
-import Autocomplete from "@mui/material/Autocomplete";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
@@ -60,21 +61,37 @@ export default function SignUp() {
     const { id, value, checked } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      [id]: id === "receiveEmails" ? checked : value,
+      [id]: id === "TextField" ? checked : value,
     }));
   };
 
-  const handleSubmit = (event: any) => {
-    event.preventDefault();
-    console.log(FormData); // Submit form data to server here
+  const handleSubmit = async () => {
+    const Userdata = await axios.post("http://localhost:8000/User", {
+      emid: FormData.emid,
+      id: FormData.id,
+      password: FormData.password,
+      name: FormData.name,
+      dept: FormData.dept,
+      office: FormData.office,
+      team: FormData.team,
+      rank: FormData.rank,
+      role: FormData.role,
+      code: "",
+    });
+    alert(FormData.id + "로 회원가입이 완료되었습니다.");
+    console.log(Userdata);
   };
 
   return (
     <Container maxWidth="xl">
-      <Grid container direction="column">
+      <Grid
+        container
+        direction="column"
+        justifyContent="center"
+        alignItems="center">
         <Grid sx={{ m: 5 }}>
           <Typography variant="h3" sx={{ fontWeight: "bold" }}>
-            회원가입
+            TCI 통합 모니터링 시스템 회원가입
           </Typography>
         </Grid>
         {/* <form onSubmit={handleSubmit}> */}
