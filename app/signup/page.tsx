@@ -94,7 +94,6 @@ export default function SignUp() {
             TCI 통합 모니터링 시스템 회원가입
           </Typography>
         </Grid>
-        {/* <form onSubmit={handleSubmit}> */}
         <Grid
           container
           direction="column"
@@ -223,13 +222,13 @@ export default function SignUp() {
                 type="submit"
                 onClick={handleSubmit}
                 variant="contained"
+                color="secondary"
                 sx={{ width: "100%", fontWeight: "bold" }}>
                 회원가입
               </Button>
             </Item>
           </Grid>
         </Grid>
-        {/* </form> */}
       </Grid>
     </Container>
   );

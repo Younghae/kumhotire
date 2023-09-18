@@ -9,21 +9,21 @@ import Box from "@mui/material/Box";
 import Typography from "@mui/material/Typography";
 import LockIcon from "@mui/icons-material/Lock";
 import SearchIcon from "@mui/icons-material/Search";
+import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import Image from "next/image";
 import Autocomplete from "@mui/material/Autocomplete";
 import Link from "next/link";
 import { signIn } from "next-auth/react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import {NextPage} from 'next';
-
+import { NextPage } from "next";
 
 const Lag = [
   { label: "한국어", language: "korean" },
   { label: "English", language: "english" },
 ];
 
-const Login:NextPage = (props): JSX.Element=>  {
+const Login: NextPage = (props): JSX.Element => {
   const [userInfo, setUserInfo] = useState({ id: "", password: "" });
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
@@ -44,8 +44,7 @@ const Login:NextPage = (props): JSX.Element=>  {
         justifyContent="space-between"
         alignItems="center"
         rowSpacing={1}
-        columnSpacing={{ xs: 1, sm: 2, md: 3 }}
-      >
+        columnSpacing={{ xs: 1, sm: 2, md: 3 }}>
         <Grid item xs={10}>
           {/* <Item> */}
           <Link href="/">
@@ -80,8 +79,7 @@ const Login:NextPage = (props): JSX.Element=>  {
           container
           direction="row"
           justifyContent="flex-start"
-          alignItems="start"
-        >
+          alignItems="start">
           <Grid item xs={5}>
             {/* <Item> */}
             <Grid container direction={"column"} sx={{ mt: 4, ml: 2, p: 3 }}>
@@ -91,8 +89,7 @@ const Login:NextPage = (props): JSX.Element=>  {
                 <Typography
                   sx={{ fontWeight: "bold", letterSpacing: 4 }}
                   fontSize={18}
-                  component="div"
-                >
+                  component="div">
                   <span style={{ color: "#ff0000" }}>T</span>CI&nbsp;
                   <span style={{ color: "#ff0000" }}>T</span>otal&nbsp;
                   <span style={{ color: "#ff0000" }}>M</span>onitoring&nbsp;
@@ -101,38 +98,33 @@ const Login:NextPage = (props): JSX.Element=>  {
                 <Box
                   sx={{
                     mt: 1,
-                  }}
-                ></Box>
+                  }}></Box>
                 {/* </Item> */}
               </Grid>
               {/* <Grid container direction={"column"}> */}
               {/* <React.Fragment> */}
-              <Box
-                      component="form"
-                      autoComplete="off"
-                      onSubmit={handleSubmit}
-                    >
-              <Grid item xs={6}>
-                <Grid
-                  container
-                  direction={"row"}
-                  justifyContent="flex-start"
-                  // sx={{
-                  //   border: 1,
-                  //   borderColor: "grey.300",
-                  // }}
-                >
-                  <Grid item xs={8}>
-                    {/* <Item> */}
-                  
+              <Box component="form" autoComplete="off" onSubmit={handleSubmit}>
+                <Grid item xs={6}>
+                  <Grid
+                    container
+                    direction={"row"}
+                    justifyContent="flex-start"
+                    // sx={{
+                    //   border: 1,
+                    //   borderColor: "grey.300",
+                    // }}
+                  >
+                    <Grid item xs={8}>
+                      {/* <Item> */}
+
                       <TextField
                         label="id"
                         value={userInfo.id}
                         onChange={({ target }) =>
-                        setUserInfo({ ...userInfo, id: target.value })
-                      }
-                      type="id"
-                        
+                          setUserInfo({ ...userInfo, id: target.value })
+                        }
+                        type="id"
+
                         // fullWidth={true}
                       />
                       {/* </Item> */}
@@ -140,36 +132,33 @@ const Login:NextPage = (props): JSX.Element=>  {
                       <Box
                         sx={{
                           mt: 1,
-                        }}
-                      ></Box>
+                        }}></Box>
 
                       <TextField
                         label="password"
                         value={userInfo.password}
                         onChange={({ target }) =>
                           setUserInfo({ ...userInfo, password: target.value })
-                      }
+                        }
                         type="password"
                         // fullWidth={true}
                       />
                       {/* </Item> */}
-         
-                  </Grid>
-                  <Grid item xs={4}>
-                    {/* <Item> */}
-                    <Button
-                      type="submit"
-                      variant="contained"
-                      color="secondary"
-                      // fullWidth={true}
-                      sx={{ height: "100%", marginLeft: 1 }}
-                    >
-                      LOGIN
-                    </Button>
-                    {/* </Item> */}
+                    </Grid>
+                    <Grid item xs={4}>
+                      {/* <Item> */}
+                      <Button
+                        type="submit"
+                        variant="contained"
+                        color="secondary"
+                        // fullWidth={true}
+                        sx={{ height: "100%", marginLeft: 1 }}>
+                        LOGIN
+                      </Button>
+                      {/* </Item> */}
+                    </Grid>
                   </Grid>
                 </Grid>
-              </Grid>
               </Box>
               {/* </React.Fragment> */}
               <Grid item xs={2}>
@@ -190,14 +179,12 @@ const Login:NextPage = (props): JSX.Element=>  {
                     mb: 1.5,
 
                     color: "grey.400",
-                  }}
-                ></Box>
+                  }}></Box>
                 <Button
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ marginRight: 1, borderRadius: 8 }}
-                >
+                  sx={{ marginRight: 1, borderRadius: 8 }}>
                   {" "}
                   <SearchIcon />
                   비밀번호 찾기
@@ -206,11 +193,19 @@ const Login:NextPage = (props): JSX.Element=>  {
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ borderRadius: 8 }}
-                >
+                  sx={{ borderRadius: 8 }}>
                   {" "}
                   <LockIcon /> 비밀번호 변경
                 </Button>
+                <Button
+                  href="/signup"
+                  color="primary"
+                  variant="contained"
+                  sx={{ marginLeft: 1, borderRadius: 8 }}>
+                  <PeopleAltIcon />
+                  회원가입
+                </Button>
+
                 {/* </Item> */}
               </Grid>
               {/* </Grid> */}
