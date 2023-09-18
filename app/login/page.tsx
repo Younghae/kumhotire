@@ -184,7 +184,7 @@ const Login: NextPage = (props): JSX.Element => {
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ marginRight: 1, borderRadius: 8 }}>
+                  sx={{ marginRight: 1, marginTop: 1, borderRadius: 8 }}>
                   {" "}
                   <SearchIcon />
                   비밀번호 찾기
@@ -193,7 +193,7 @@ const Login: NextPage = (props): JSX.Element => {
                   href="/"
                   color="primary"
                   variant="contained"
-                  sx={{ borderRadius: 8 }}>
+                  sx={{ marginTop: 1, borderRadius: 8 }}>
                   {" "}
                   <LockIcon /> 비밀번호 변경
                 </Button>
@@ -201,7 +201,7 @@ const Login: NextPage = (props): JSX.Element => {
                   href="/signup"
                   color="primary"
                   variant="contained"
-                  sx={{ marginLeft: 1, borderRadius: 8 }}>
+                  sx={{ marginLeft: 1, marginTop: 1, borderRadius: 8 }}>
                   <PeopleAltIcon />
                   회원가입
                 </Button>
