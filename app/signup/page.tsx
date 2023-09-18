@@ -31,11 +31,8 @@ const team = [
 ];
 
 const Item = styled(Paper)(({ theme }) => ({
-  backgroundColor: theme.palette.mode === "dark" ? "#1A2027" : "#fff",
-  ...theme.typography.body2,
   padding: theme.spacing(1),
   textAlign: "center",
-  color: theme.palette.text.secondary,
 }));
 
 export default function SignUp() {
@@ -83,10 +80,49 @@ export default function SignUp() {
         {/* <form onSubmit={handleSubmit}> */}
         <Grid
           container
-          direction="row"
+          direction="column"
           justifyContent="center"
           alignItems="center">
-          <Grid item xs={6}>
+          <Grid sx={{ width: "30vw" }}>
+            <Item>
+              <Grid sx={{ m: 1 }} />
+              <TextField
+                label="본부를 작성해주세요."
+                variant="filled"
+                fullWidth
+                required
+                id="dept"
+                size="small"
+                value={FormData.dept}
+                onChange={handleFormChange}
+              />
+              <Grid sx={{ m: 1 }} />
+              <TextField
+                label="부문을 작성해주세요."
+                variant="filled"
+                fullWidth
+                required
+                id="office"
+                size="small"
+                value={FormData.office}
+                onChange={handleFormChange}
+              />
+              <Grid sx={{ m: 1 }} />
+              <TextField
+                label="팀을 작성해주세요."
+                variant="filled"
+                fullWidth
+                required
+                id="team"
+                size="small"
+                value={FormData.team}
+                onChange={handleFormChange}
+              />
+              <Grid sx={{ m: 1 }} />
+            </Item>
+          </Grid>
+          <Grid sx={{ m: 1 }} />
+          <Grid sx={{ width: "30vw" }}>
             <Item>
               <TextField
                 label="사번을 작성해주세요."
@@ -142,50 +178,6 @@ export default function SignUp() {
                 fullWidth
                 required
                 size="small"
-              />
-              <Grid sx={{ m: 1 }} />
-              <Autocomplete
-                id="dept"
-                size="small"
-                options={dept}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="filled"
-                    label="본부를 선택하세요"
-                    value={FormData.dept}
-                  />
-                )}
-              />
-              <Grid sx={{ m: 1 }} />
-              <Autocomplete
-                id="office"
-                size="small"
-                options={office}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="filled"
-                    label="부문을 선택하세요"
-                    value={FormData.office}
-                    onChange={handleFormChange}
-                  />
-                )}
-              />
-              <Grid sx={{ m: 1 }} />
-              <Autocomplete
-                id="team"
-                size="small"
-                options={team}
-                renderInput={(params) => (
-                  <TextField
-                    {...params}
-                    variant="filled"
-                    label="팀을 선택하세요"
-                    value={FormData.team}
-                    onChange={handleFormChange}
-                  />
-                )}
               />
               <Grid sx={{ m: 1 }} />
               <TextField
