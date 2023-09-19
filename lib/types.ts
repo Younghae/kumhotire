@@ -4,6 +4,7 @@ export interface User {
   password: String;
   code: String;
   name: any;
+  email:any,
   dept: String;
   office: String;
   team: String;

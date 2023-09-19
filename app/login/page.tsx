@@ -226,7 +226,7 @@ const Login: NextPage = (props): JSX.Element => {
                   아이디 찾기
                 </Button>
                 <Button
-                  href="/"
+                  href="/forgotpassword"
                   color="primary"
                   variant="contained"
                   sx={{ marginTop: 1, borderRadius: 8 }}>
