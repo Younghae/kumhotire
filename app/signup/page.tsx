@@ -20,7 +20,6 @@ import Paper from "@mui/material/Paper";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
-  textAlign: "center",
 }));
 
 export default function SignUp() {
@@ -56,6 +55,21 @@ export default function SignUp() {
   const router = useRouter();
 
   const handleSubmit = async () => {
+    if (
+      !FormData.emid ||
+      !FormData.id ||
+      !FormData.password ||
+      !FormData.name ||
+      !FormData.email ||
+      !FormData.dept ||
+      !FormData.office ||
+      !FormData.team ||
+      !FormData.rank ||
+      !FormData.role
+    ) {
+      alert("모든 필수 입력 항목을 작성해주세요.");
+      return;
+    }
     const Userdata = await axios.post("http://localhost:8000/User", {
       emid: FormData.emid,
       id: FormData.id,
