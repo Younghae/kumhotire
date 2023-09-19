@@ -2,6 +2,7 @@
 
 import axios from "axios";
 import * as React from "react";
+import { useRouter } from "next/navigation";
 import Grid from "@mui/material/Grid";
 import Typography from "@mui/material/Typography";
 import Container from "@mui/material/Container";
@@ -16,20 +17,6 @@ import InputLabel from "@mui/material/InputLabel";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
-
-const dept = [
-  { label: "경영본부" },
-  { label: "생산본부" },
-  { label: "연구본부" },
-];
-
-const office = [{ label: "경영부" }, { label: "생산부" }, { label: "연구부" }];
-
-const team = [
-  { label: "경영지원팀" },
-  { label: "생산1팀" },
-  { label: "연구1팀" },
-];
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -65,6 +52,8 @@ export default function SignUp() {
     }));
   };
 
+  const router = useRouter();
+
   const handleSubmit = async () => {
     const Userdata = await axios.post("http://localhost:8000/User", {
       emid: FormData.emid,
@@ -80,6 +69,7 @@ export default function SignUp() {
     });
     alert(FormData.id + "로 회원가입이 완료되었습니다.");
     console.log(Userdata);
+    router.push("/login");
   };
 
   return (
