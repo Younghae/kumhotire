@@ -13,8 +13,9 @@ import PeopleAltIcon from "@mui/icons-material/PeopleAlt";
 import Image from "next/image";
 import Autocomplete from "@mui/material/Autocomplete";
 import Link from "next/link";
+import {Alert} from "@mui/material"
 import { signIn } from "next-auth/react";
-import { useState } from "react";
+import { useState,FormEvent } from "react";
 import { useRouter } from "next/navigation";
 import { NextPage } from "next";
 
@@ -25,6 +26,40 @@ const Lag = [
 
 const Login: NextPage = (props): JSX.Element => {
   const [userInfo, setUserInfo] = useState({ id: "", password: "" });
+  const [id, setId] = useState('')
+  const [password, setPassword] = useState('')
+  const [blankPw, setBlankPw] = useState(false)
+  const [blankId, setBlankId] = useState(false)
+  const [error, setError] = useState(false)
+  const router = useRouter()
+  const onChangeId = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setId(e.target.value)
+  }
+  const onChangePw = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setPassword(e.target.value)
+  }
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>) => {
+    e.preventDefault()
+    if (id.length <= 0)
+      setBlankId(true)
+    if (password.length <= 0)
+      setBlankPw(true)
+    if (!blankId && !blankPw) {
+    // 로그인 부분
+      await signIn("credentials", {
+        id: id,
+        password: password,
+        redirect: false,
+      }).then((result) => {
+        if (result?.ok)
+          router.push('/login')
+        if (result?.error)
+          setError(true)
+      });
+    }
+  }
+/*
   const handleSubmit: FormEventHandler<HTMLFormElement> = async (e) => {
     e.preventDefault();
 
@@ -36,7 +71,7 @@ const Login: NextPage = (props): JSX.Element => {
 
     console.log(res);
   };
-
+*/
   return (
     <Box display="grid" justifyContent="center" alignItems="center" mt={8}>
       <Grid
@@ -119,14 +154,13 @@ const Login: NextPage = (props): JSX.Element => {
 
                       <TextField
                         label="id"
-                        value={userInfo.id}
-                        onChange={({ target }) =>
-                          setUserInfo({ ...userInfo, id: target.value })
-                        }
-                        type="id"
+                        value={id}
+                   onChange={onChangeId}
+                  onBlur={()=>setBlankId(id.length <= 0)}
+                 placeholder="아이디"
 
                         // fullWidth={true}
-                      />
+                      />        {blankId && <Alert severity="error">아이디를 입력해주세요</Alert>}
                       {/* </Item> */}
                       {/* <Item> */}
                       <Box
@@ -136,13 +170,13 @@ const Login: NextPage = (props): JSX.Element => {
 
                       <TextField
                         label="password"
-                        value={userInfo.password}
-                        onChange={({ target }) =>
-                          setUserInfo({ ...userInfo, password: target.value })
-                        }
                         type="password"
+                        value={password}
+                        onChange={onChangePw}
+                        onBlur={()=>setBlankPw(password.length <= 0)}
+                        placeholder="비밀번호"
                         // fullWidth={true}
-                      />
+                      />  {blankPw && <Alert severity="error">비밀번호를 입력해주세요</Alert>}
                       {/* </Item> */}
                     </Grid>
                     <Grid item xs={4}>
@@ -159,6 +193,8 @@ const Login: NextPage = (props): JSX.Element => {
                     </Grid>
                   </Grid>
                 </Grid>
+                {error && 
+                <Alert severity="error">비밀번호를 확인해주세요</Alert>}
               </Box>
               {/* </React.Fragment> */}
               <Grid item xs={2}>
@@ -220,6 +256,7 @@ const Login: NextPage = (props): JSX.Element => {
                 alt=""
                 style={{ width: "100%", height: "55vh" }}
               />
+
             </Box>
           </Grid>
 
