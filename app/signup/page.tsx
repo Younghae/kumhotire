@@ -17,6 +17,7 @@ import InputLabel from "@mui/material/InputLabel";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Paper from "@mui/material/Paper";
+import Image from "next/image";
 
 const Item = styled(Paper)(({ theme }) => ({
   padding: theme.spacing(1),
@@ -48,7 +49,7 @@ export default function SignUp() {
     const { id, value, checked } = event.target;
     setFormData((prevState) => ({
       ...prevState,
-      [id]: id === "TextField" ? checked : value,
+      [id]: id === "" ? checked : value,
     }));
   };
 
@@ -90,12 +91,15 @@ export default function SignUp() {
 
   return (
     <Container maxWidth="xl">
+      <Grid sx={{ m: 5 }}>
+        <Image src="/logo.png" width={150} height={50} alt="kumhotire logo" />
+      </Grid>
       <Grid
         container
         direction="column"
         justifyContent="center"
         alignItems="center">
-        <Grid sx={{ m: 5 }}>
+        <Grid sx={{ mb: 5 }}>
           <Typography variant="h3" sx={{ fontWeight: "bold" }}>
             TCI 통합 모니터링 시스템 회원가입
           </Typography>
@@ -240,7 +244,12 @@ export default function SignUp() {
                 onClick={handleSubmit}
                 variant="contained"
                 color="secondary"
-                sx={{ width: "100%", fontWeight: "bold" }}>
+                sx={{
+                  width: "100%",
+                  height: "50px",
+                  fontWeight: "bold",
+                  fontSize: "20px",
+                }}>
                 회원가입
               </Button>
             </Item>
