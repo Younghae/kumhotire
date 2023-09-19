@@ -181,13 +181,13 @@ const Login: NextPage = (props): JSX.Element => {
                     color: "grey.400",
                   }}></Box>
                 <Button
-                  href="/"
+                  href="/findid"
                   color="primary"
                   variant="contained"
                   sx={{ marginRight: 1, marginTop: 1, borderRadius: 8 }}>
                   {" "}
                   <SearchIcon />
-                  비밀번호 찾기
+                  아이디 찾기
                 </Button>
                 <Button
                   href="/"
