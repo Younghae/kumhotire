@@ -68,7 +68,7 @@ export default function SignUp() {
       code: "",
     });
     alert(FormData.id + "로 회원가입이 완료되었습니다.");
-    console.log(Userdata);
+    console.log(FormData);
     router.push("/login");
   };
 
