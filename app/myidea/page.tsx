@@ -22,8 +22,8 @@ export default function MyIdea() {
   return (
     <Container maxWidth="xl" sx={{ border: "1px solid" }}>
       <div>이규례</div>
-      {myIdea.map((idea) => (
-        <Box>{idea.name}</Box>
+      {myIdea.map((idea, index) => (
+        <Box key={index}>{idea.name}</Box>
       ))}
     </Container>
   );

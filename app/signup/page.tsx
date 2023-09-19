@@ -37,6 +37,7 @@ export default function SignUp() {
     id: "",
     password: "",
     name: "",
+    email: "",
     dept: "",
     office: "",
     team: "",
@@ -60,6 +61,7 @@ export default function SignUp() {
       id: FormData.id,
       password: FormData.password,
       name: FormData.name,
+      email: FormData.email,
       dept: FormData.dept,
       office: FormData.office,
       team: FormData.team,
@@ -180,6 +182,17 @@ export default function SignUp() {
                 value={FormData.name}
                 onChange={handleFormChange}
                 label="이름을 작성해주세요."
+                variant="filled"
+                fullWidth
+                required
+                size="small"
+              />
+              <Grid sx={{ m: 1 }} />
+              <TextField
+                id="email"
+                value={FormData.email}
+                onChange={handleFormChange}
+                label="e-mail을 작성해주세요."
                 variant="filled"
                 fullWidth
                 required

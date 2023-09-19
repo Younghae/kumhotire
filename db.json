@@ -4,73 +4,53 @@
       "emid": "000",
       "id": "master",
       "password": "1234",
-      "code": "T001",
       "name": "마스터계정",
+      "email": "hihello516@naver.com",
       "dept": "",
       "office": "",
       "team": "",
       "rank": "",
-      "role": "마스터"
+      "role": "마스터",
+      "code": ""
     },
     {
       "emid": "001",
       "id": "admin",
       "password": "1234",
-      "code": "T001",
-      "name": "홍길동",
+      "name": "관리자",
+      "email": "hihello516@naver.com",
       "dept": "",
       "office": "",
       "team": "",
-      "rank": "회장",
-      "role": "대표이사"
+      "rank": "관리자",
+      "role": "관리자",
+      "code": ""
     },
     {
-      "emid": "100",
-      "id": "user1",
+      "emid": "005",
+      "id": "test1",
       "password": "1234",
-      "code": "T002",
       "name": "이가나",
+      "email": "lgr0813@naver.com",
       "dept": "경영본부",
       "office": "경영부",
       "team": "경영지원팀",
-      "rank": "팀원",
-      "role": "대리"
+      "rank": "팀장",
+      "role": "과장",
+      "code": ""
     },
     {
-      "emid": "200",
-      "id": "user2",
+      "emid": "006",
+      "id": "test2",
       "password": "1234",
-      "code": "T003",
-      "name": "이다라",
-      "dept": "생산본부",
-      "office": "생산부",
-      "team": "생산1팀",
-      "rank": "팀원",
-      "role": "사원"
-    },
-    {
-      "emid": "300",
-      "id": "user3",
-      "password": "1234",
-      "code": "T004",
-      "name": "이마바",
+      "name": "테스트2",
+      "email": "lgr0813@naver.com",
       "dept": "연구본부",
       "office": "연구부",
       "team": "연구1팀",
       "rank": "팀원",
-      "role": "사원"
-    },
-    {
-      "emid": "500",
-      "id": "test11",
-      "password": "1234",
-      "code": "T004",
-      "name": "실험용",
-      "dept": "연구본부",
-      "office": "연구부",
-      "team": "연구1팀",
-      "rank": "팀원",
-      "role": "사원"
+      "role": "사원",
+      "code": ""
     }
   ],
   "MyIdea": [
